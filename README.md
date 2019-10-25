@@ -1,4 +1,4 @@
-# @bbq-beets/fib-tools
+# @Affraes-Organisation/fib-tools
 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Affraes-Organisation/fib-tools.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Affraes-Organisation/fib-tools/alerts/)
 
