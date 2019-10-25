@@ -20,9 +20,9 @@ jobs:
           - 8
           - 10
           - 12
-       exclude:
+        exclude:
         # excludes node 8 on windows-latest
-        - os: windows-latest
+          - os: windows-latest
           node: 8
     runs-on: ${{matrix.os}}
     steps:
