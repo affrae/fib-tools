@@ -36,6 +36,6 @@ function getNumber(nth) {
  * @param {number} [start=0] A number to start the sequence at
  * @yield {number} The next number in the sequence
  */
-function* getSequence(start = 0) {
-  while (true) yield getNumber(start++)
+function* getSequence(theStart = 0) {
+  while (true) yield getNumber(theStart++)
 }
