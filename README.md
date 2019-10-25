@@ -1,6 +1,6 @@
 # @bbq-beets/fib-tools
 
-![](https://github.com/bbq-beets/fib-tools/workflows/CI/badge.svg)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/Affraes-Organisation/fib-tools.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Affraes-Organisation/fib-tools/alerts/)
 
 This module provides helper functions for the Fibonacci sequence.
 
