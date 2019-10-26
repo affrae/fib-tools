@@ -57,7 +57,7 @@ jobs:
         with:
           version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@pied-piper-inc'
+          scope: '@affrae'
       - name: Update package version
         run: |
           git config user.name "Actions User"
