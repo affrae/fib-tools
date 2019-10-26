@@ -10,6 +10,11 @@ jobs:
    runs-on: ubuntu-latest
    steps:
     - uses: actions/checkout@v1
+    - name: Update package version
+      run: |
+        git config user.name "Actions User"
+        git config user.email noreply@github.com
+        npm version 1.0.$(date +%s): 
     - uses: actions/setup-node@v1
       with:
         node-version: '12'
@@ -21,6 +26,7 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         registry-url: 'https://npm.pkg.github.com'
+        scope: '@affrae' 
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{github.token}}
