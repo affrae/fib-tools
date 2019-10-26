@@ -39,16 +39,16 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+          scope: affrae
       - name: Update package version
         run: |
           git config user.name "Actions User"
           git config user.email noreply@github.com
           npm version 1.0.$(date +%s)
       - run: |
-          npm publish --@affrae:registry=https://registry.npmjs.org/
+          npm install && npm publish --@affrae:registry=https://registry.npmjs.org/
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-#          NODE_AUTH_TOKEN: ${{github.token}}
 
   publish-github-package-registry:
     needs: build
