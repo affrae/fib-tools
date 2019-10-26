@@ -7,67 +7,19 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os:
-          - macOS-latest
-          - ubuntu-latest
-          - windows-latest
-        node-version:
-          - 8
-          - 10
-          - 12
-        exclude:
-        # excludes node 8 on windows-latest
-          - os: windows-latest
-            node-version: 8
-    runs-on: ${{matrix.os}}
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: ${{matrix.node-version}}
-      - run: npm ci
-      - run: npm test
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - name: Update package version
-        run: |
-          git config user.name "Actions User"
-          git config user.email noreply@github.com
-          npm version 1.0.$(date +%s)
-      - name: Publish to NPMJS
-        run: |
-          npm config set //registry.npmjs.org/:_authToken=${{secrets.npm_token}}
-          npm install
-          npm publish
-        env:
-         NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
-
-  publish-github-package-registry:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: '@affrae'
-      - name: Update package version
-        run: |
-          git config user.name "Actions User"
-          git config user.email noreply@github.com
-          npm version 1.0.$(date +%s)
-      - name: Publish to GPR
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{github.token}}
+   steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+        registry-url: 'https://registry.npmjs.org'
+    - run: npm install
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+    - uses: actions/setup-node@v1
+      with:
+        registry-url: 'https://npm.pkg.github.com'
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
