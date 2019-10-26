@@ -14,17 +14,18 @@ jobs:
         with:
           node-version: '10.x'
           registry-url: 'https://registry.npmjs.org/'
-#          registry-url: 'https://npm.pkg.github.com/'
-      - name: Update package version
+      - name: Update package version and setup git
         run: |
           git config user.name "Actions User"
           git config user.email noreply@github.com
           npm version 1.0.$(date +%s)
-      - run: npm install
-      - run: npm publish
+      - name: Publish to NPMJS
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          npm publish
         env:
+          CI: true
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-#          NODE_AUTH_TOKEN: ${{github.token}}
 
   publish-github-package-registry:
     runs-on: ubuntu-latest
