@@ -45,11 +45,11 @@ jobs:
           git config user.name "Actions User"
           git config user.email noreply@github.com
           npm version 1.0.$(date +%s)
-      - run: |
-         npm config set //registry.npmjs.org/:_authToken=${{secrets.npm_token}}
-         npm publish --access public --@affrae:registry=https://registry.npmjs.org/
+          npm config set //registry.npmjs.org/:_authToken=${{secrets.npm_token}}
+          npm run trypublish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+         CI: true
+         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   publish-github-package-registry:
     needs: build
