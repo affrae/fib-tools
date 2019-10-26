@@ -4,7 +4,7 @@
   "description": "Functions for working with the Fibonacci sequence",
   "main": "index.js",
   "scripts": {
-    "test": "jest --ci --color --verbose"
+    "test": "jest --ci --color --verbose",
     "trypublish": "npm publish || true"
   },
   "repository": {
