@@ -1,6 +1,8 @@
 # @affrae/fib-tools
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/Affraes-Organisation/fib-tools.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/affrae/fib-tools/alerts/)
+| LGTM | Code Quality |
+|------|--------------|
+|[![Total alerts](https://img.shields.io/lgtm/alerts/g/affrae/fib-tools.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/affrae/fib-tools/alerts/)|[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/affrae/fib-tools.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/affrae/fib-tools/context:javascript)
 
 This module provides helper functions for the Fibonacci sequence.
 
