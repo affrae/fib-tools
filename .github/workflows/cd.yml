@@ -44,7 +44,7 @@ jobs:
           git config user.name "Actions User"
           git config user.email noreply@github.com
           npm version 1.0.$(date +%s)
-          echo @OWNER:registry=https://npm.pkg.github.com/ >> .npmrc
+      - run: npm ci
       - run: npm publish --@affrae:registry=https://registry.npmjs.org/
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
