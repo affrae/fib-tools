@@ -6,27 +6,37 @@ on:
       - master
 
 jobs:
-  build:
-   runs-on: ubuntu-latest
-   steps:
-    - uses: actions/checkout@v1
-    - name: Update package version
-      run: |
-        git config user.name "Actions User"
-        git config user.email noreply@github.com
-        npm version 1.0.$(date +%s): 
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12'
-        registry-url: 'https://registry.npmjs.org'
-    - run: npm install
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-    - uses: actions/setup-node@v1
-      with:
-        registry-url: 'https://npm.pkg.github.com'
-        scope: '@affrae' 
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{github.token}}
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Update package version
+        run: |
+          git config user.name "Actions User"
+          git config user.email noreply@github.com
+          npm version 1.0.$(date +%s)
+      - run: npm publish --@affrae:registry=https://registry.npmjs.org/
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+
+  publish-github-package-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: '@affrae'
+      - name: Update package version
+        run: |
+          git config user.name "Actions User"
+          git config user.email noreply@github.com
+          npm version 1.0.$(date +%s)
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{github.token}}
