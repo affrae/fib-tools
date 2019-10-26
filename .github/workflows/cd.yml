@@ -29,6 +29,25 @@ jobs:
           version: ${{matrix.node-version}}
       - run: npm ci
       - run: npm test
+        
+  publish-github-package-registry:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: '@affrae'
+      - name: Update package version
+        run: |
+          git config user.name "Actions User"
+          git config user.email noreply@github.com
+          npm version 1.0.$(date +%s)
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{github.token}}        
 
 #  publish-npm:
 #    needs: build
@@ -48,21 +67,4 @@ jobs:
 #        env:
 #          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
-  publish-github-package-registry:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: '@affrae'
-      - name: Update package version
-        run: |
-          git config user.name "Actions User"
-          git config user.email noreply@github.com
-          npm version 1.0.$(date +%s)
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{github.token}}
+
