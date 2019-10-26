@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git://github.com/affrae/fib-tools.git"
   },
-  "author": "Jeremy Epling <jeremyepling@github.com>",
+  "author": "Daniel Figucio <affrae@me.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/affrae/fib-tools/issues"
