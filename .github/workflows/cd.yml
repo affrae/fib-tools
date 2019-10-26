@@ -22,7 +22,7 @@ jobs:
       - name: Publish to NPMJS
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          npm run trypublish
+          npm publish
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
