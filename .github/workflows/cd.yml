@@ -46,7 +46,7 @@ jobs:
           git config user.email noreply@github.com
           npm version 1.0.$(date +%s)
       - run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > /home/runner/work/_temp/.npmrc
           npm publish --access public --@affrae:registry=https://registry.npmjs.org/
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
