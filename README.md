@@ -35,8 +35,8 @@ for (const n of seq) {
 ```
 
 ## Acknowledgements
-This is openly and heavily borrowed from Jonathon Clem's `fib-tools project`, and he is listed as copyright opwner in the [MIT License](README.md). I used this to teach myself ~LGTM and QL~ GitHub Advanced Security, along with GitHub Actions
+This is openly and heavily borrowed from Jonathon Clem's `fib-tools project`, and he is listed as copyright opwner in the [MIT License](LICENSE.md). I used this to teach myself ~LGTM and QL~ GitHub Advanced Security, along with GitHub Actions
 
 ## License
-The scripts and documentation in this project are released under the [MIT License](README.md)
+The scripts and documentation in this project are released under the [MIT License](LICENSE.md)
 
