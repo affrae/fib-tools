@@ -23,6 +23,7 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           npm config set always-auth
+          npm config set scope "affrae"
           cat /home/runner/work/_temp/.npmrc
           npm config list
           npm publish --@affrae:registry=https://registry.npmjs.org/
