@@ -36,7 +36,7 @@ jobs:
           CI: true
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
-      # Publish to Publish to GitHub Package Registry
+      # Publish to GitHub Package Registry
       - uses: actions/setup-node@master
         with:
           node-version: 12
