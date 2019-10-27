@@ -29,6 +29,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
   publish-github-package-registry:
+    needs: publish-npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
