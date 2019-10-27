@@ -23,6 +23,7 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           cat /home/runner/work/_temp/.npmrc
+          npm config list
           npm publish --@affrae:registry=https://registry.npmjs.org/
         env:
           CI: true
