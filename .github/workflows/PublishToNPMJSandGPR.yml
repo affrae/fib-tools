@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  publish-npm-and-gpr:
+  publish-to-npm-and-gpr:
     runs-on: ubuntu-latest
     steps:
       
