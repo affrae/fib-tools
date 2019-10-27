@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  publish-npm:
+  publish-npm-and-gpr:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -28,22 +28,11 @@ jobs:
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-          
-  publish-github-package-registry:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - name: Publish to GitHub Package Registry
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@affrae'
-      - name: Update package version and setup git
-        run: |
-          git config user.name "Actions User"
-          git config user.email noreply@github.com
-#          npm version 1.0.$(date +%s)
-      - name: Publish to GitHub Package Registry
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{github.token}}
