@@ -22,7 +22,7 @@ jobs:
           npm version 1.0.$(date +%s)
 
       # Publish to NPMJS
-      - uses: actions/setup-node@master
+#      - uses: actions/setup-node@master
         with:
           node-version: 12
           registry-url: 'https://registry.npmjs.org/'
