@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: '10.x'
+          node-version: 12
           registry-url: 'https://registry.npmjs.org/'
       - name: Update package version and setup git
         run: |
@@ -38,11 +38,12 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@affrae'
-      - name: Update package version
+      - name: Update package version and setup git
         run: |
           git config user.name "Actions User"
           git config user.email noreply@github.com
-          npm version 1.0.$(date +%s)
-      - run: npm publish
+#          npm version 1.0.$(date +%s)
+      - name: Publish to GitHub Package Registry
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{github.token}}
