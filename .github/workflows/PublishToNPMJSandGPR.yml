@@ -13,7 +13,7 @@ jobs:
       # Checkout the repo
       - uses: actions/checkout@master
         
-      # Update package version and setup git
+      # Update package version and set up git
       - uses: actions/setup-node@master
       - name: Update package version and setup git
         run: |
