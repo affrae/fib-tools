@@ -25,7 +25,7 @@ jobs:
           npm config set always-auth
           npm config set scope "@affrae"
           npm config list
-          npm publish --@affrae:registry=https://registry.npmjs.org/
+          npm publish --access public 
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
