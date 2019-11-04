@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  publish-to-npm-and-gpr:
+  publish-develop-versions-to-gpr:
     runs-on: ubuntu-latest
     steps:
 
@@ -20,7 +20,7 @@ jobs:
           git config user.name "Actions User"
           git config user.email noreply@github.com
           npm version 0.1.1-dev.$(date +%s)
-          
+
       # Publish to GitHub Package Registry
       - uses: actions/setup-node@master
         with:
