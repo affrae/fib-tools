@@ -11,4 +11,4 @@ import javascript
 
 from NewExpr new
 where new.getCalleeName() = "RegExp"
-select new "New RegExp variable!!"
+select new, "New RegExp variable!!"
