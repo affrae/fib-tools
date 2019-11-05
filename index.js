@@ -25,6 +25,8 @@ function getList(nth) {
 function getNumber(nth) {
   if (nth === 0) return 0
   if (nth === 1) return 1
+  
+  var regex2 = new RegExp('\\w+');
 
   return getNumber(nth - 1) + getNumber(nth - 2)
 }
