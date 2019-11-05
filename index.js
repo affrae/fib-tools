@@ -41,4 +41,6 @@ function* getSequence(theStart = 0) {
 }
 
 function badFunction(arguments) {
+  while (true) {
+  }
 }
