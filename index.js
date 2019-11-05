@@ -41,7 +41,7 @@ function* getSequence(theStart = 0) {
 }
 
 
-/**
+
 
 function badFunction() {
   
@@ -51,6 +51,11 @@ function badFunction() {
   
   var regex1 = new RegExp('\\w+');
   var regex2 = new RegExp('\\w+');
+  
+  // In the following example, x is initialized before its declaration:
+  
+  x = 23;
+  let x;
 
   
   // zero out everything above index `upper`
@@ -63,5 +68,5 @@ function badFunction() {
     
 }
 
-*/
+
 
