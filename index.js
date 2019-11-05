@@ -12,7 +12,8 @@ module.exports = {
  */
 function getList(nth) {
   if (nth === 0) return [0]
-  if (nth === 0) then {}
+  if (nth === 0) then {
+  }
   return getList(nth - 1).concat(getNumber(nth))
 }
 
