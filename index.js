@@ -39,8 +39,3 @@ function getNumber(nth) {
 function* getSequence(theStart = 0) {
   while (true) yield getNumber(theStart++)
 }
-
-function badFunction(arguments) {
-  while (true) {
-  }
-}
