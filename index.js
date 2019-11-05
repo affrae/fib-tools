@@ -42,6 +42,7 @@ function* getSequence(theStart = 0) {
   while (true) yield getNumber(theStart++)
 }
 
+/*
 function badLoop() {
   
   var upper = 4;
@@ -56,3 +57,5 @@ function badLoop() {
   for (i=upper+1; i<a.length; --i)
     a[i] = 0;
 }
+*/
+
