@@ -12,8 +12,6 @@ module.exports = {
  */
 function getList(nth) {
   if (nth === 0) return [0]
-  if (nth === 0) {
-  }
   return getList(nth - 1).concat(getNumber(nth))
 }
 
@@ -40,4 +38,7 @@ function getNumber(nth) {
  */
 function* getSequence(theStart = 0) {
   while (true) yield getNumber(theStart++)
+}
+
+function badFunction(arguments) {
 }
