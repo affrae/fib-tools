@@ -42,7 +42,7 @@ function* getSequence(theStart = 0) {
 
 
 /**
-// comment 
+
 function badFunction() {
   
   var upper = 4;
