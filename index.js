@@ -40,7 +40,7 @@ function* getSequence(theStart = 0) {
   while (true) yield getNumber(theStart++)
 }
 
-
+// comment 
 function badFunction() {
   
   var upper = 4;
