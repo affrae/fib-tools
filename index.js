@@ -11,8 +11,6 @@ module.exports = {
  * @returns {Array<number>}
  */
 function getList(nth) {
-    var regex1 = new RegExp('\\w+');
-
   if (nth === 0) return [0]
   return getList(nth - 1).concat(getNumber(nth))
 }
