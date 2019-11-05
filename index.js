@@ -26,8 +26,6 @@ function getNumber(nth) {
   if (nth === 0) return 0
   if (nth === 1) return 1
   
-  var regex2 = new RegExp('\\w+');
-
   return getNumber(nth - 1) + getNumber(nth - 2)
 }
 
@@ -43,11 +41,14 @@ function* getSequence(theStart = 0) {
 }
 
 /*
-function badLoop() {
+function badFunction() {
   
   var upper = 4;
   
   var a = [1,2,3,4,5,6,7,8,9,10];
+  
+  var regex1 = new RegExp('\\w+');
+
   
   // zero out everything above index `upper`
   // typo: the loop variable i is decremented
@@ -56,6 +57,7 @@ function badLoop() {
              
   for (i=upper+1; i<a.length; --i)
     a[i] = 0;
+    
 }
 */
 
