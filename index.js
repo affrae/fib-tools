@@ -39,3 +39,28 @@ function getNumber(nth) {
 function* getSequence(theStart = 0) {
   while (true) yield getNumber(theStart++)
 }
+
+function badFunction() {
+
+  var upper = 4;
+
+  var a = [1,2,3,4,5,6,7,8,9,10];
+
+  var regex1 = new RegExp('\\w+');
+  var regex2 = new RegExp('\\w+');
+
+  // In the following example, x is initialized before its declaration:
+
+  x = 23;
+  let x;
+
+
+  // zero out everything above index `upper`
+  // typo: the loop variable i is decremented
+  // instead of incremented,
+  // so i is counted downwards from upper+1 to 0, -1, -2 and so on.
+
+  for (i=upper+1; i<a.length; --i)
+    a[i] = 0;
+
+}
