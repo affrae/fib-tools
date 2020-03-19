@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/affrae/fib-tools#readme",
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
     "minimist": ">=1.2.2"
   },
   "dependencies": {
-    "minimist": ">=1.2.2"
-  }
+      "minimist": ">=1.2.2"
+    }
 }
