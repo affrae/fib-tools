@@ -19,5 +19,8 @@
   "homepage": "https://github.com/affrae/fib-tools#readme",
   "devDependencies": {
     "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "minimist": ">=1.2.2"
   }
 }
