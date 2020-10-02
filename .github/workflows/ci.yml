@@ -5,7 +5,7 @@ on:
     branches:
       - master
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -17,13 +17,9 @@ jobs:
           - ubuntu-latest
           - windows-latest
         node-version:
-          - 8
           - 10
           - 12
-        exclude:
-        # excludes node 8 on windows-latest
-          - os: windows-latest
-            node-version: 8
+          - 14
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@master
