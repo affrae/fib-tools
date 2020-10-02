@@ -19,6 +19,7 @@ jobs:
         node-version:
           - 10
           - 12
+          - 14
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@master
